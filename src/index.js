@@ -10,6 +10,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(route);
 
+app.get("/",(req,res)=>{
+
+    return res.send("teste");
+});
+
+
 app.listen(process.env.db_port,()=>{
     console.log("App rodando");
 });
