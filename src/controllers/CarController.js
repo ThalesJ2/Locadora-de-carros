@@ -6,7 +6,7 @@ class CarController{
   
          let cars = await Car.readAll();
 
-         if(cars.status)
+         if(cars.resultQuery != 0)
             return res.json(cars.resultQuery);
         else
             return res.sendStatus(404);

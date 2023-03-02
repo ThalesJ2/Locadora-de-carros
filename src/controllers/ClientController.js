@@ -7,7 +7,7 @@ class ClientController {
 
         let result = await Client.readAll();
 
-        if(result.status)
+        if(result.resultQuery != 0)
             return res.json(result.resultQuery);
         else
             return res.sendStatus(404);
