@@ -21,7 +21,7 @@ class Car{
             select("id","brand","model","dateregister")
             .from("car").where({id,});
 
-            return {status:true,result:resultQuery};
+            return {status:true,resultQuery};
                                 
         } catch (error) { console.log(error);
             return {status:false}
@@ -45,7 +45,7 @@ class Car{
         try {
             
             let resultQuery = await connection("car").where({id,}).del();
-            return {status:true};
+            return {status:true,resultQuery};
 
         } catch (error) {
 

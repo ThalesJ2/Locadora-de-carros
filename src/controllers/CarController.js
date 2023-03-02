@@ -17,9 +17,10 @@ class CarController{
 
         let {id} = req.params;
         let car = await Car.findId(id);
+        console.log(typeof(id));
 
-        if(car.status)
-            return res.json(car.result);
+        if(car.resultQuery != 0)
+            return res.json(car.resultQuery);
         else
             return res.sendStatus(404);
 
@@ -57,7 +58,7 @@ class CarController{
         
         let result = await Car.delete(id);
 
-        if(result.status)
+        if(result.resultQuery != 0)
             return res.sendStatus(200);
         else
             return res.sendStatus(404);
